@@ -11,6 +11,16 @@ const app = new Hono()
 
 app.use(logger())
 
+const env = ['CONVEX_URL']
+
+
+// se não tiver a variável de ambiente CONVEX_URL
+if (!env.every(v => process.env[v])) {
+  app.get("/*", c => {
+    return c.json({error: "CONVEX_URL is not defined"})
+  })
+}
+
 
 app.get('/', async (c) => {
 

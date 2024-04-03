@@ -3,6 +3,8 @@
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
+    "@clerk/backend": "^0.38.4",
+    "@hono/clerk-auth": "^1.0.1",
     "@hono/swagger-ui": "^0.2.1",
     "axios": "^1.6.8",
     "convex": "^1.11.0",
